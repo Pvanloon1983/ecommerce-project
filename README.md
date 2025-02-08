@@ -1,1 +1,1 @@
-## Ecommerce project from scratch
+## Ecommerce project
