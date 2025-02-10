@@ -61,6 +61,16 @@ input:focus {
 	border-radius: 5px;
 	padding: 12px;
 	cursor: pointer;
+	font-family: "Roboto", serif;
+}
+
+.form-question {
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.form-question a {
+	text-decoration: underline;
 }
 
 /* Navbar */
@@ -120,35 +130,121 @@ nav ul li
 }
 
 /* Register page */
-.register-form-container 
+.register
+.form-container
 h1 {
 	text-align: center;
 }
 
-.register-form {
+.register
+form {
 margin: 0 auto;
 }
 
 .register
-.register-form-container 
+.form-container 
 .form-control {
 	display: flex;
 	flex-direction: column;
 }
 
-.register-form {
+.register
+form {
 	max-width: 400px;
 }
 
-.register-form label {
+.register
+.form label {
 	margin-bottom: 5px;
 }
 
-.register-form input {
+.register
+.form input {
 	margin-bottom: 15px;
 }
 
-.register-form
+.register
+.form
+.btn {
+	max-width: 100px;
+}
+
+/* Login page */
+.login
+.form-container
+h1 {
+	text-align: center;
+}
+
+.login
+form {
+margin: 0 auto;
+}
+
+.login
+.form-container 
+.form-control {
+	display: flex;
+	flex-direction: column;
+}
+
+.login
+form {
+	max-width: 400px;
+}
+
+.login
+.form label {
+	margin-bottom: 5px;
+}
+
+.login
+.form input {
+	margin-bottom: 15px;
+}
+
+.login
+.form
+.btn {
+	max-width: 100px;
+}
+
+/* Passowrd forget */
+.password-forget
+.form-container
+h1 {
+	text-align: center;
+}
+
+.password-forget
+form {
+margin: 0 auto;
+}
+
+.password-forget
+.form-container 
+.form-control {
+	display: flex;
+	flex-direction: column;
+}
+
+.password-forget
+form {
+	max-width: 400px;
+}
+
+.password-forget
+.form label {
+	margin-bottom: 5px;
+}
+
+.password-forget
+.form input {
+	margin-bottom: 15px;
+}
+
+.password-forget
+.form
 .btn {
 	max-width: 100px;
 }

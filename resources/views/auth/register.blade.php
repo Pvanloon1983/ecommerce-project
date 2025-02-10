@@ -1,8 +1,8 @@
 <x-layout page="register">
 	<div class="container">
-		<div class="register-form-container">
+		<div class="form-container">
 			<h1>Registreren</h1>
-			<form class="register-form" action="{{ route('register') }}" method="POST">
+			<form class="form" action="{{ route('register') }}" method="POST">
 				@csrf
 				<div class="form-control">
 					<label for="first_name">Voornaam</label>
@@ -39,10 +39,11 @@
 						<p class="form_error">{{ $message }}</p>
 					@enderror
 				</div>
-				<div class="form-control">
-					<button class="btn" type="submit">Registreren</button>
+				<div class="form-control form-choice">
+					<button class="btn" type="submit">Registreren</button>					
 				</div>
-			</form>
+				<div class="form-question">Al registreerd? <a href="{{ route('login') }}">Inloggen</a></div>
+			</form>			
 		</div>
 	</div>
 </x-layout>
