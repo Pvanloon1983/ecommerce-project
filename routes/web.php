@@ -13,12 +13,16 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
 
-Route::get('/registreren', [RegisterController::class, 'create'])->name('register');
+Route::get('/registreren', [RegisterController::class, 'create'])->name('register')->middleware('guest');;
 Route::post('/registreren', [RegisterController::class, 'store']);
 
-Route::get('/inloggen', [LoginController::class, 'create'])->name('login');
+Route::get('/inloggen', [LoginController::class, 'create'])->name('login')->middleware('guest');
 Route::post('/inloggen', [LoginController::class, 'store']);
-Route::post('/logout', [LoginController::class, 'destroy']);
+Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth');
+// GET route to redirect unauthorized users
+Route::get('/logout', function () {
+    return redirect()->route('login');
+});
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
