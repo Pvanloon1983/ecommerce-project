@@ -1,5 +1,10 @@
 <x-layout pageTitle="Dashboard">
 	<div class="container">
+		@if (session('status'))
+		<div class="alert alert-success">
+				<p>{{ session('status') }}</p>
+		</div>
+		@endif
 		
 		<h1>Dashboard</h1>		
 

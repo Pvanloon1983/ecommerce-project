@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 class RegisterController
 {
@@ -47,4 +48,22 @@ class RegisterController
         // Ensure the user is redirected to the email verification route
         return redirect(route('verification.notice'));
     }
+
+    public function emailverify()
+    {
+        return view('auth.verify-email');
+    }
+
+    public function emailverifyID(EmailVerificationRequest $request)
+    {
+        $request->fulfill();
+        return redirect()->route('dashboard')->with('status', 'Je e-mailadres is succesvol geverifieerd.');
+    }
+
+    public function emailverifyNote(Request $request)
+    {
+        $request->user()->sendEmailVerificationNotification(); 
+        return back()->with('resent', 'Verificatie link opnieuw verzonden');
+    }
+
 }
