@@ -1,0 +1,171 @@
+/* Utilities */
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Roboto", serif;
+	font-size: 16px;
+	color: #333;
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: #000;
+}
+
+input {
+	border: 1px solid #d6d6d6;
+	padding: 15px 10px;
+	height: 35px;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #333;
+}
+
+label {
+	font-size: 14px;
+	color: #474747;
+}
+
+input:focus {
+	outline: 1px solid #707070;
+	box-shadow: none;
+}
+
+.form_error {
+	margin: 0;
+	margin-bottom: 10px;
+	margin-top: -10px;
+	font-size: 12px;
+	color: rgb(197, 49, 49);
+}
+
+.btn {
+	background-color: #000;
+	border: none;
+	color: #fff;
+	border-radius: 5px;
+	padding: 12px;
+	cursor: pointer;
+}
+
+/* Navbar */
+.navbar {
+	height: 70px;
+	width: 100%;
+	background-color: dodgerblue;
+	height: 70px;
+}
+
+.navbar 
+.container {
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar 
+.container
+nav ul {
+	height: 70px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+}
+
+.navbar 
+.container
+nav ul li a:hover {
+	color: #fff;
+}
+
+.navbar 
+.container
+nav ul li 
+.menu-icon {
+	display: none;
+}
+
+.navbar 
+.container
+nav ul li 
+.menu-icon {
+	cursor: pointer;
+}
+
+.navbar 
+.container
+nav ul li 
+.menu-icon:hover {
+	color: #fff;
+}
+
+/* Register page */
+.register-form-container 
+h1 {
+	text-align: center;
+}
+
+.register-form {
+margin: 0 auto;
+}
+
+.register
+.register-form-container 
+.form-control {
+	display: flex;
+	flex-direction: column;
+}
+
+.register-form {
+	max-width: 400px;
+}
+
+.register-form label {
+	margin-bottom: 5px;
+}
+
+.register-form input {
+	margin-bottom: 15px;
+}
+
+.register-form
+.btn {
+	max-width: 100px;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 768px) {
+	.navbar 
+	.container
+	nav ul li 
+	.menu-icon {
+		display: block;
+	}
+
+  .navbar 
+	.container
+	nav ul
+	.menu-item {
+		display: none;
+	}
+}

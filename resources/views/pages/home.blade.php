@@ -1,3 +1,5 @@
 <x-layout pageTitle="Home Page">
-	Home
+	<div class="container">
+		Home!!
+	</div>
 </x-layout>
