@@ -17,6 +17,7 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
             // 'created_by' => User::factory(), // Create a user if none exists
             'created_by' => '1',
@@ -32,10 +33,10 @@ class ProductFactory extends Factory
             'height' => $this->faker->numberBetween(10, 200), // Random height
             'depth' => $this->faker->numberBetween(5, 50), // Random depth
             'weight' => $this->faker->numberBetween(1, 10), // Random weight
-            'picture_one' => $this->faker->imageUrl(400, 400, 'products'), // Random image URL
-            'picture_two' => $this->faker->optional()->imageUrl(400, 400, 'products'),
-            'picture_three' => $this->faker->optional()->imageUrl(400, 400, 'products'),
-            'picture_four' => $this->faker->optional()->imageUrl(400, 400, 'products'),
+            'picture_one' => 'https://picsum.photos/100/100?random=' . rand(1, 1000),
+            'picture_two' => 'https://picsum.photos/100/100?random=' . rand(1, 1000),
+            'picture_three' => 'https://picsum.photos/100/100?random=' . rand(1, 1000),
+            'picture_four' => 'https://picsum.photos/100/100?random=' . rand(1, 1000),
             'created_at' => now(),
             'updated_at' => now(),
         ];

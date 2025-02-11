@@ -32,7 +32,7 @@
 					@auth
 					<form action="/logout" method="POST">
 							@csrf
-							<button>Log Out</button>
+							<button class="btn">Log Out</button>
 						</form>
 					@endauth  
 					<li class="hamburger-item"><i class="fa-solid fa-bars menu-icon"></i></li>

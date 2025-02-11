@@ -1,267 +1,225 @@
 /* Utilities */
 * {
-	box-sizing: border-box;
-}
-
-html, body {
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: "Roboto", serif;
-	font-size: 16px;
-	color: #333;
+  font-family: "Roboto", serif;
+  font-size: 16px;
+  color: #333;
 }
 
 .container {
-	width: 100%;
-	max-width: 1200px;
-	padding: 0 15px;
-	margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 a {
-	cursor: pointer;
-	text-decoration: none;
-	color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
 }
 
-input {
-	border: 1px solid #d6d6d6;
-	padding: 15px 10px;
-	height: 35px;
-	border-radius: 5px;
-	font-size: 16px;
-	color: #333;
+a:hover {
+  color: #fff;
 }
 
-label {
-	font-size: 14px;
-	color: #474747;
+input, 
+textarea {
+  border: 1px solid #d6d6d6;
+  padding: 10px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
 }
 
 input:focus {
-	outline: 1px solid #707070;
-	box-shadow: none;
+  outline: 1px solid #707070;
 }
 
-.form_error {
-	margin: 0;
-	margin-bottom: 10px;
-	margin-top: -10px;
-	font-size: 12px;
-	color: rgb(197, 49, 49);
+label {
+  font-size: 14px;
+  color: #474747;
+  margin-bottom: 5px;
+}
+
+.form-error {
+  margin: -10px 0 10px;
+  font-size: 12px;
+  color: rgb(197, 49, 49);
 }
 
 .btn {
-	background-color: #000;
-	border: none;
-	color: #fff;
-	border-radius: 5px;
-	padding: 12px;
-	cursor: pointer;
-	font-family: "Roboto", serif;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  padding: 12px;
+  cursor: pointer;
+  font-family: "Roboto", serif;
+  /* max-width: 100px; */
 }
 
-.form-question {
-	margin-top: 10px;
-	font-size: 14px;
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.form-question a {
-	text-decoration: underline;
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 /* Navbar */
+
 .navbar {
-	height: 70px;
-	width: 100%;
-	background-color: dodgerblue;
-	height: 70px;
+  height: 70px;
+  width: 100%;
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
 }
 
-.navbar 
-.container {
-	height: 70px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
-.navbar 
-.container
-nav ul {
-	height: 70px;
-	margin: 0;
-	padding: 0;
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+.hamburger-item {
+  display: none;
+  cursor: pointer;
+}
+
+/* Forms (Register, Login, Password Forget) */
+.form-container h1 {
+  text-align: center;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.form-container form {
+  max-width: 400px;
+}
+
+.form-question {
+	margin-bottom: 8px;
+}
+
+.form-question a {
+	color: #333;
+	text-decoration: underline;
+}
+
+/* Dashboard */
+.dashboard-grid {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	height: calc(100vh - 70px);
+}
+
+.dashboard-grid .left {
+	background-color: rgb(201, 201, 202);
+}
+
+.dashboard-grid .right {
+	background-color: rgb(214, 230, 215);
+}
+
+/* Product table */
+#products {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#products td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#products tr:nth-child(even){background-color: #f2f2f2;}
+
+#products tr:hover {background-color: #ddd;}
+
+#products th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Pagination Styling */
+.pagination-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.pagination {
+	display: inline-flex;
 	list-style: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 25px;
+	padding: 0;
 }
 
-.navbar 
-.container
-nav ul li a:hover {
-	color: #fff;
+.pagination li {
+	margin: 0 5px;
 }
 
-.navbar 
-.container
-nav ul li 
-.menu-icon {
-	display: none;
+.pagination li a,
+.pagination li span {
+	display: block;
+	padding: 8px 12px;
+	border-radius: 5px;
+	border: 1px solid #007bff;
+	color: #007bff;
+	text-decoration: none;
+	transition: background 0.3s, color 0.3s;
 }
 
-.navbar 
-.container
-nav ul li 
-.menu-icon {
-	cursor: pointer;
+/* Active Page */
+.pagination li.active span {
+	background-color: #007bff;
+	color: white;
+	border-color: #007bff;
 }
 
-.navbar 
-.container
-nav ul li 
-.menu-icon:hover {
-	color: #fff;
+/* Hover Effect */
+.pagination li a:hover {
+	background-color: #007bff;
+	color: white;
 }
 
-/* Register page */
-.register
-.form-container
-h1 {
-	text-align: center;
+/* Disabled Links */
+.pagination li.disabled span {
+	color: #ccc;
+	border-color: #ccc;
 }
 
-.register
-form {
-margin: 0 auto;
-}
-
-.register
-.form-container 
-.form-control {
-	display: flex;
-	flex-direction: column;
-}
-
-.register
-form {
-	max-width: 400px;
-}
-
-.register
-.form label {
-	margin-bottom: 5px;
-}
-
-.register
-.form input {
-	margin-bottom: 15px;
-}
-
-.register
-.form
-.btn {
-	max-width: 100px;
-}
-
-/* Login page */
-.login
-.form-container
-h1 {
-	text-align: center;
-}
-
-.login
-form {
-margin: 0 auto;
-}
-
-.login
-.form-container 
-.form-control {
-	display: flex;
-	flex-direction: column;
-}
-
-.login
-form {
-	max-width: 400px;
-}
-
-.login
-.form label {
-	margin-bottom: 5px;
-}
-
-.login
-.form input {
-	margin-bottom: 15px;
-}
-
-.login
-.form
-.btn {
-	max-width: 100px;
-}
-
-/* Passowrd forget */
-.password-forget
-.form-container
-h1 {
-	text-align: center;
-}
-
-.password-forget
-form {
-margin: 0 auto;
-}
-
-.password-forget
-.form-container 
-.form-control {
-	display: flex;
-	flex-direction: column;
-}
-
-.password-forget
-form {
-	max-width: 400px;
-}
-
-.password-forget
-.form label {
-	margin-bottom: 5px;
-}
-
-.password-forget
-.form input {
-	margin-bottom: 15px;
-}
-
-.password-forget
-.form
-.btn {
-	max-width: 100px;
-}
-
-/* On screens that are 600px or less, set the background color to olive */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-	.navbar 
-	.container
-	nav ul li 
-	.menu-icon {
-		display: block;
-	}
+  .hamburger-item {
+    display: block;
+  }
 
-  .navbar 
-	.container
-	nav ul
-	.menu-item {
+	.logout-form {
 		display: none;
 	}
+
+  .menu-item {
+    display: none;
+  }
 }

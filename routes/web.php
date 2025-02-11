@@ -15,21 +15,21 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/registreren', [RegisterController::class, 'create'])->name('register')->middleware('guest');;
 Route::post('/registreren', [RegisterController::class, 'store']);
 
+// Email verify after register
+Route::get('/email/verify', [RegisterController::class, 'emailverify'])->name('verification.notice')->middleware('auth');
+Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'emailverifyID'])->name('verification.verify')->middleware(['auth', 'signed']);
+Route::post('/email/verification-notification', [RegisterController::class, 'emailverifyNote'])->name('verification.send')->middleware(['auth', 'throttle:6,1']);
+
 // User Login
 Route::get('/inloggen', [LoginController::class, 'create'])->name('login')->middleware('guest');
 Route::post('/inloggen', [LoginController::class, 'store']);
 
-// User logout
-Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth');
-Route::get('/logout', function () { return redirect()->route('login'); });
-
-// Email verify after register
-Route::get('/email/verify', [RegisterController::class, 'emailverify'])->middleware('auth')->name('verification.notice');
-Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'emailverifyID'])->middleware(['auth', 'signed'])->name('verification.verify');
-Route::post('/email/verification-notification', [RegisterController::class, 'emailverifyNote'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-
 // Password forgot function
-Route::get('/wachtwoord-vergeten', [PasswordResetController::class, 'passwordforgot'])->middleware('guest')->name('password.request');
-Route::post('/wachtwoord-vergeten', [PasswordResetController::class, 'passwordforgotPost'])->middleware('guest')->name('password.email');
-Route::get('/wachtwoord-resetten/{token}', [PasswordResetController::class, 'passwordreset'])->middleware('guest')->name('password.reset');
-Route::post('/reset-password', [PasswordResetController::class, 'passwordresetPost'])->middleware('guest')->name('password.update');
+Route::get('/wachtwoord-vergeten', [PasswordResetController::class, 'passwordforgot'])->name('password.request')->middleware('guest');
+Route::post('/wachtwoord-vergeten', [PasswordResetController::class, 'passwordforgotPost'])->name('password.email')->middleware('guest');
+Route::get('/wachtwoord-resetten/{token}', [PasswordResetController::class, 'passwordreset'])->name('password.reset')->middleware('guest');
+Route::post('/reset-password', [PasswordResetController::class, 'passwordresetPost'])->name('password.update')->middleware('guest');
+
+// User logout
+Route::post('/logout', [LoginController::class, 'destroy'])->name('logout')->middleware('auth');
+Route::get('/logout', function () { return redirect()->route('login'); });

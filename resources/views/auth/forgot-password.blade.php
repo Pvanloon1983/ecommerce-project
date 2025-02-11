@@ -1,4 +1,5 @@
 <x-layout page="password-forget">
+
 	<div class="container">
 		<div class="form-container">
 			<h1>Wachtwoord resetten</h1>
@@ -22,4 +23,5 @@
 			</form>
 		</div>
 	</div>
+	
 </x-layout>
